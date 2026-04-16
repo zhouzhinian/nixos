@@ -2,28 +2,25 @@
 
 {
     programs.dms-shell = {
-    enable = true;
-    
-    systemd.enable = true;
+        enable = true;
 
-    enableSystemMonitoring = true;
-    enableDynamicTheming = true;
-    enableAudioWavelength = true;
-    enableVPN = true;
-    enableClipboardPaste = true;
-    enableCalendarEvents = true;
-   };
-  programs.dsearch = {
-  enable = true;
+        systemd.enable = true;
 
-  # Use a custom package (optional)
-  package = pkgs.dsearch;
+        enableSystemMonitoring = true;
+        enableDynamicTheming = true;
+        enableAudioWavelength = true;
+        enableVPN = true;
+        enableClipboardPaste = true;
+        enableCalendarEvents = true;
+    };
+    programs.dsearch = {
+        enable = true;
 
-  # Systemd service configuration
-  systemd = {
-    enable = true;               # Enable systemd user service
-    target = "default.target";   # Start with user session
-  };
-};
+        package = pkgs.dsearch;
 
+        systemd = {
+            enable = true;
+            target = "default.target";
+        };
+    };
 }
