@@ -31,7 +31,6 @@
   environment.sessionVariables = {
     GDK_GL = "gles";
     NIXOS_OZONE_WL = "1";
-    QT_QPA_PLATFORMTHEME = "qt5ct";
   };
 
   # --- 音频 ---
@@ -53,7 +52,7 @@
 
   nixpkgs.config.allowUnfree = true;
   # 若某包需要放行 insecure 版本，请用 nixpkgs.config.permittedInsecurePackages = [ "包名" ];
-  services.openssh.enable = true;
+  services.openssh.enable = false;
 
   # --- 基本软件包 ---
   environment.systemPackages = with pkgs; [
@@ -86,7 +85,6 @@
   ## Flatpak
   services.flatpak.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  xdg.portal.config.common.default = "gtk";
 
   # 将 Flathub remote 指向 SJTU 国内镜像
   systemd.services.flatpak-sjtu-mirror = {

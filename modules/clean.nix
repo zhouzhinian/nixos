@@ -1,22 +1,17 @@
-{ config, lib, pkgs, ... }:
+{ ... }:
 {
- # 清除
+  # 清除
 
- # do not need to keep too much generations
-  boot.loader.systemd-boot.configurationLimit = 10;
-  # boot.loader.grub.configurationLimit = 10;
+  # 只保留最近 2 个引导项（systemd-boot 开机菜单）
+  boot.loader.systemd-boot.configurationLimit = 2;
 
-  # do garbage collection weekly to keep disk usage low
+  # 每周自动 GC（原生选项）
   nix.gc = {
     automatic = true;
     dates = "weekly";
-    options = "--delete-older-than 1w";
+    options = "--delete-older-than 14d";
   };
 
-  # Optimise storage
-  # you can also optimise the store manually via:
-  #    nix-store --optimise
-  # https://nixos.org/manual/nix/stable/command-ref/conf-file.html#conf-auto-optimise-store
-  nix.settings.auto-optimise-store = true; 
-
+  # 自动优化 store（节省磁盘空间）
+  nix.settings.auto-optimise-store = true;
 }
