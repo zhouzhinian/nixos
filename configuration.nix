@@ -43,6 +43,7 @@
   };
   security.rtkit.enable = true;
 
+  services.printing.enable = true;
   # --- 用户与安全 ---
   users.users.zhinian = {
     isNormalUser = true;
@@ -77,6 +78,21 @@
     rustup
     fastfetch
     btop
+    gh
+    nix-index
+    nix-output-monitor
+    nixd
+    nix-tree
+    bat
+    fd
+    zoxide
+    delta
+    lazygit
+    tldr
+    ffmpeg
+    yt-dlp
+    ncdu
+    satty
   ];
 
   # --- 桌面应用与服务 ---

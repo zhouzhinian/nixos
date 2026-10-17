@@ -1,0 +1,19 @@
+{ pkgs, inputs, ... }: {
+  environment.systemPackages = with pkgs; [
+    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+    helix
+    vlc
+    papirus-icon-theme
+    mint-cursor-themes
+    dracula-icon-theme
+    dracula-theme
+    qbittorrent-enhanced
+    tokyonight-gtk-theme
+    obs-studio
+    zed-editor
+    splayer-next
+    wpsoffice-cn
+  ];
+
+  programs.direnv.enable = true;
+}

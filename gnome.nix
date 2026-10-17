@@ -39,6 +39,7 @@ environment.systemPackages = with pkgs; [
     loupe
     gnome-software
     ptyxis
+    ghostty
 	gnomeExtensions.kimpanel
 	gnomeExtensions.appindicator
 	gnomeExtensions.user-themes
