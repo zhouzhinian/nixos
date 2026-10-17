@@ -76,6 +76,7 @@
     p7zip
     rustup
     fastfetch
+    btop
   ];
 
   # --- 桌面应用与服务 ---
@@ -85,7 +86,9 @@
   ## Flatpak
   services.flatpak.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-
+  ## --zsh
+  programs.zsh.enable = true;
+  users.users.zhinian.shell = pkgs.zsh;
   # 将 Flathub remote 指向 SJTU 国内镜像
   systemd.services.flatpak-sjtu-mirror = {
     description = "Point Flathub remote to SJTU mirror";

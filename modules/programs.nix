@@ -10,6 +10,8 @@
     tokyonight-gtk-theme
     obs-studio
     zed-editor
+    splayer-next
+    wpsoffice-cn
   ];
 
   programs.direnv.enable = true;
